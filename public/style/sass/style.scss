@@ -1,0 +1,28 @@
+.th-center {
+  th {
+    text-align: center;
+  }
+}
+.tr-center {
+  td {
+    text-align: center;
+  }
+}
+table {
+  td {
+    vertical-align: middle !important;
+  }
+}
+.scroll-table {
+  th {
+    width: 230px !important;
+  }
+  td {
+    width: 230px !important;
+  }
+}
+.form-group {
+  select {
+    height: 26px;
+  }
+}

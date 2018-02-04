@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>CDroom</title>
+    <!-- 引入 WeUI -->
+    <link rel="stylesheet" href="<%= routePrefix %>/webroot/plugins/weui/dist/style/weui.min.css"/>
+    <!--样式-->
+    <% if (env === 'development') { %>
+    <link rel="stylesheet" href="<%= routePrefix %>/webroot/build/css/style.css">
+    <link rel="stylesheet" href="<%= routePrefix %>/webroot/build/css/theme.css">
+    <% } else { %>
+    <link rel="stylesheet" href="<%= routePrefix %>/webroot/build/css/<%= cssMap['style.css'] %>">
+    <link rel="stylesheet" href="<%= routePrefix %>/webroot/build/css/<%= cssMap['theme.css'] %>">
+    <% } %>
+</head>
+<body>
+<!-- 使用 -->
+<div id="app"></div>
+<script type="text/javascript" src="<%= routePrefix %>/webroot/plugins/weui/dist/script/jweixin-1.0.0.js"></script>
+<script src="<%= routePrefix %>/webroot/plugins/weui/dist/script/weui.min.js"></script>
+<!-- jQuery -->
+<script src="<%= routePrefix %>/webroot/plugins/jQuery/jquery.min.js"></script>
+<script src="<%= routePrefix %>/webroot/plugins/jQuery/zepto.min.js"></script>
+<script src="<%= routePrefix %>/webroot/plugins/jQuery/touch.js"></script>
+<!--artDialog-->
+<!--<script type="text/javascript" src="<%= routePrefix %>/webroot/plugins/artDialog/dist/dialog-min.js"></script>-->
+
+<form action="" method="get" style="display: none" id="excel-export"></form>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "apps": [
+    {
+      "name": "wx-mz",
+      "max_memory_restart": "600M",
+      "script": "./www",
+      "instances": 0,
+      "exec_mode": "cluster",
+      "env": {
+        "NODE_ENV": "production"
+      },
+      "env_testing": {
+        "NODE_ENV": "testing"
+      },
+      "env_development": {
+        "NODE_ENV": "development"
+      }
+    }
+  ]
+}
