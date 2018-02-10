@@ -16,8 +16,8 @@ module.exports = {
         const cipher = crypto.createCipher('aes192', cipherConfig['pwd'])
         let target = cipher.update(source, 'utf8', 'hex')
         target += cipher.final('hex')
-        const targetUrl = `http://127.0.0.1:8889/wx/mz/typing#/typing/index?ps=${target}`
-        // const targetUrl = `http://app.cdroom.top/wx/mz/typing#/typing/index?ps=${target}`
+        // const targetUrl = `http://127.0.0.1:8889/wx/mz/typing#/typing/index?ps=${target}`
+        const targetUrl = `http://app.cdroom.top/wx/mz/typing#/typing/index?ps=${target}`
         const code = qr.image(targetUrl, { type: 'png' });
         res.setHeader('Content-type', 'image/png'); //sent qr image to client side
         code.pipe(res);
