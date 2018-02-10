@@ -3,10 +3,11 @@
  */
 const express = require('express');
 const router = express.Router();
-const path = require('path')
 const msgControler = require('../controllers/msg');
+const {iswx} = require('../middlewares/validates')
 
-/* GET users listing. */
-router.get('/additem', msgControler.addItem)
+/* restful api */
+router.get('/addItem', iswx)
+router.post('/addItem', msgControler.addItem)
 
 module.exports = router;

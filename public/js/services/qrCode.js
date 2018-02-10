@@ -4,10 +4,11 @@
 import api from 'api'
 
 export default {
-    getList() {
+    getUrlParams(queryBody) {
         return api({
-            url: '/test/list',
-            type: 'get'
+            url: '/qrCode/ps',
+            type: 'get',
+            data: queryBody
         })
     }
 }

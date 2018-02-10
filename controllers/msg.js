@@ -7,15 +7,12 @@ const {omit} = require('lodash')
 
 module.exports = {
     async addItem (req, res, next) {
-        res.end(req.query['echostr'])
-        /*const data = await msgModel.addItem();
+        const data = await msgModel.addItem(req.body);
         let result = {}
         if(data.ok) {
-            result['codeText'] = 'success'
-            result['data'] = omit(data, 'ok')
+            res.end('success')
         } else {
-            result['codeText'] = 'failure'
+            res.status(500).end('error in insertiing DB')
         }
-        res.json(getResult(result))*/
     }
 }

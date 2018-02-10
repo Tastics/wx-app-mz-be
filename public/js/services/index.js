@@ -1,8 +1,8 @@
 /**
  * Created by cendawei on 2018/1/26.
  */
-import testService from './test'
+import qrCodeService from './qrCode'
 
 export default {
-    testService
+    qrCodeService
 }

@@ -8,12 +8,12 @@ export default new Router({
         {
             path: '/',
             name: 'index-page',
-            redirect: '/test/index'
+            redirect: '/typing/index'
         },
         {
-            path: '/test/index',
-            name: 'test-index',
-            component: resolve => require(['@/components/test/test-index.vue'], resolve)
+            path: '/typing/index',
+            name: 'typing-index',
+            component: resolve => require(['@/components/typing/index.vue'], resolve)
         }
     ]
 })
