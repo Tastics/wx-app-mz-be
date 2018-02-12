@@ -1,6 +1,11 @@
-# express-gulp-webpack-app
-### express+gulp+webpack框架：包括生产和开发环境，其中生产环境下css和js加上文件chunkhash，用于发布时清理缓存。其他雪碧图、js模块化和sass一并具有。
-### 安装依赖吧：根目录下npm install（已包括后端和前端所有包）
-### 运行项目：npm run start
-### 前端开发环境：进去public目录 npm run dev
-### 前端生产环境：进去public目录 npm run build
+### CDroom码字后台功能点：
+- 将文本内容生成二维码
+- 生成的二维码文本支持单页面多场景选择
+- 二维码内容加密，只能通过本码字系统解密输出
+- 实现二维码有效时间控制，超过预设的有效期时间，二维码自动失效
+- 安全可靠，又生动有趣的码字平台
+### 技术架构
+> 微信小程序（CDroom码字）+ 码字后台（本github项目）
+### 手机扫码预览demo：
+![](http://app.cdroom.top/wx/mz/webroot/images/wx-mz.png)
+### `项目合作联系：business@cdroom.top`
