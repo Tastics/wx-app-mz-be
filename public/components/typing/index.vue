@@ -1,12 +1,14 @@
 <template>
     <div class="page article js_show">
         <div class="page_bd">
+            <img :src="headPic" class="header-pic" v-if="scene === 'xinnian'">
             <article class="weui-article">
-                <p>
+                <p class="mz-font">
                     <span id="sp1"></span>
                     <span id="sp2">_</span>
                 </p>
             </article>
+            <img :src="footPic" class="footer-pic" v-if="scene === 'xinnian'">
         </div>
         <div class="js_dialog" style="opacity: 1;" v-show="isError">
             <div class="weui-mask"></div>
@@ -23,20 +25,27 @@
 <script>
     import $ from 'zepto'
     import services from 'services'
+    import routeConfig from 'routeConfig'
 
     export default {
         data() {
             return {
+                headPic: `${routeConfig['apiPrefix']}/webroot/images/headimg.gif`,
+                footPic: `${routeConfig['apiPrefix']}/webroot/images/footimg.gif`,
                 isError: false
             }
         },
         computed: {
             'ps'() {
                 return this.$route.query['ps']
+            },
+            'scene'() {
+                return this.$route.query['scene']
             }
         },
         mounted() {
             this.typing()
+            this.scene === 'xinnian' && $("body").addClass('mz-bg')
         },
         methods: {
             typing() {
@@ -53,8 +62,8 @@
                             const sp2=document.getElementById("sp2");
                             const in1 = setInterval(function(){
                                 sp2.style.display="none";
-                                setTimeout("sp2.style.display='inline'",500);
-                            },700);
+                                setTimeout("sp2.style.display='inline'", 500);
+                            }, 700);
                             let index=0;
                             const in2 = setInterval(function(){
                                 if(index < text.length){
@@ -63,7 +72,7 @@
                                 } else {
                                     clearInterval(in1)
                                     clearInterval(in2)
-                                    sp2.style.display="none"
+                                    setTimeout("sp2.style.display='none'", 1500);
                                 }
                             },400);
                         }
