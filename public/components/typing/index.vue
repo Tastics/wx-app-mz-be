@@ -55,7 +55,7 @@
                         const text = res.data['text']
                         const dl = res.data['dl']
                         if(!dl || !text || text.length <= 0 || (dl != -1 && dl < new Date().getTime())) {
-                            this.isError = false
+                            this.isError = true
                         } else {
                             const that = this
                             const sp1=document.getElementById("sp1");
@@ -78,7 +78,7 @@
                         }
                     })
                     .fail(err => {
-                        this.isError = false
+                        this.isError = true
                     })
             },
             confirmError() {
