@@ -2,7 +2,8 @@
  * Created by cendawei on 2017/4/18.
  */
 const _ = require('lodash');
-const {errorCodes} = require('../configs')
+const redis = require('redis')
+const {errorCodes, cache} = require('../configs')
 
 module.exports = {
     getResult({codeText, msg, data}) {
@@ -28,5 +29,13 @@ module.exports = {
         for (var k in o)
             if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
         return fmt;
+    },
+    getCacheClient() {
+        const client = redis.createClient({
+            host: cache[process.env.NODE_ENV].host,
+            port: cache[process.env.NODE_ENV].port
+        })
+        client.on('error', err => console.log(err))
+        return client
     }
 }
