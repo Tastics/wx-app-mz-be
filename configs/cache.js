@@ -11,7 +11,9 @@ module.exports = {
     'development': defaultsDeep({
     }, cacheConfig),
     'testing': defaultsDeep({
+        host: "120.78.95.62"
     }, cacheConfig),
     'production': defaultsDeep({
+        host: "120.78.95.62"
     }, cacheConfig),
 }
